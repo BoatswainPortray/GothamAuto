@@ -1,0 +1,10 @@
+﻿﻿<Application x:Class="GothamAuto.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views/MainWindow.xaml"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <BitmapImage x:Key="AboutIcon" UriSource="Resources/Icons/about.ico" />
+        <BitmapImage x:Key="SettingsIcon" UriSource="Resources/Icons/settings.ico" />
+    </Application.Resources>
+</Application>
