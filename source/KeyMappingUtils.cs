@@ -1,0 +1,37 @@
+﻿﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using GothamAuto.Models;
+
+namespace GothamAuto.Utils
+{
+    public static class KeyMappingUtils
+    {
+        private static readonly string keysMappingPath =
+            Path.Combine(Environment.CurrentDirectory, Constants.RESOURCES_DIRECTORY, Constants.KEY_MAPPINGS_RESOURCE_PATH);
+
+        public static List<KeyMapping> KeyMapping { get; set; }
+
+        static KeyMappingUtils()
+        {
+            LoadMapping();
+        }
+
+        private static void LoadMapping()
+        {
+            if (KeyMapping != null)
+                return;
+            ReadMapping();
+        }
+
+        public static KeyMapping GetKeyMappingByCode(int virtualKeyCode)
+        {
+            return KeyMapping.Find(keyMapping => keyMapping.VirtualKeyCode == virtualKeyCode);
+        }
+
+        private static void ReadMapping()
+        {
+            KeyMapping = JsonUtils.ReadJson<List<KeyMapping>>(keysMappingPath);
+        }
+    }
+}

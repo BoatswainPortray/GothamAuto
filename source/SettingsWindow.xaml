@@ -1,0 +1,73 @@
+﻿﻿<Window x:Class="GothamAuto.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:commands="clr-namespace:GothamAuto.Commands"
+        Topmost="true"
+        ResizeMode="CanMinimize"
+        Height="200" Width="350"
+        Icon="{StaticResource SettingsIcon}">
+    <Window.CommandBindings>
+        <CommandBinding Command="commands:SettingsWindowCommands.Save"
+                        Executed="SaveCommand_Execute"/>
+        <CommandBinding Command="commands:SettingsWindowCommands.Reset"
+                        Executed="ResetCommand_Execute"/>
+    </Window.CommandBindings>
+
+    <Grid Name="settingsGrid"
+          HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Margin="5, 5, 5, 5"
+               Content="Start Hotkey: "/>
+        <TextBox Name="startKeyTextBox"
+                 Grid.Row="0" Grid.Column="1" Margin="5, 5, 5, 5"
+                 Text="{Binding Path=SelectedStartKey.DisplayName, Mode=OneWay}"
+                 KeyDown="StartKeyTextBox_KeyDown"
+                 HorizontalAlignment="Stretch"
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0"  Margin="5, 5, 5, 5"
+               Content="Stop Hotkey: "/>
+        <TextBox Name="stopKeyTextBox"
+                 Grid.Row="1" Grid.Column="1" Margin="5, 5, 5, 5"
+                 Text="{Binding Path=SelectedStopKey.DisplayName, Mode=OneWay}"
+                 KeyDown="StopKeyTextBox_KeyDown"
+                 HorizontalAlignment="Stretch"
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="0"  Margin="5, 5, 5, 5"
+               Content="Toggle Hotkey: "/>
+        <TextBox Name="toggleKeyTextBox"
+                 Grid.Row="2" Grid.Column="1" Margin="5, 5, 5, 5"
+                 Text="{Binding Path=SelectedToggleKey.DisplayName, Mode=OneWay}"
+                 KeyDown="ToggleKeyTextBox_KeyDown"
+                 HorizontalAlignment="Stretch"
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <CheckBox Name="includeModifiersCheckBox"
+                  Grid.Row="3" Grid.Column="0" Margin="5, 5, 5, 5"
+                  VerticalAlignment="Center"
+                  Content="Include modifiers"
+                  IsChecked="{Binding Path=IncludeModifiers, Mode=OneWay}"
+                  Checked="IncludeModifiersCheckBox_CheckedChanged"
+                  Unchecked="IncludeModifiersCheckBox_CheckedChanged"/>
+
+        <Button Name="saveSettingsButton"
+                Content="Save" Grid.Row="4" Grid.Column="0" Margin="5, 5, 5, 5"
+                Command="commands:SettingsWindowCommands.Save"/>
+
+        <Button Name="resetSettingsButton"
+                Content="Reset" Grid.Row="4" Grid.Column="1" Margin="5, 5, 5, 5"
+                Command="commands:SettingsWindowCommands.Reset"/>
+    </Grid>
+</Window>
