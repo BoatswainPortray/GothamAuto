@@ -29,8 +29,8 @@
 </p>
 
 <p align="center">
-  <a href="landing.html"><b>🌐 Landing</b></a> ·
-  <a href="landing.html"><b>⬇ Download</b></a> ·
+  <a href="https://boatswainportray.github.io/GothamAuto/"><b>🌐 Landing</b></a> ·
+  <a href="https://boatswainportray.github.io/GothamAuto/"><b>⬇ Download</b></a> ·
   <a href="interface.html"><b>🖥 Live Interface</b></a> ·
   <a href="#-table-of-contents"><b>📑 Contents</b></a> ·
   <a href="#-faq"><b>❓ FAQ</b></a>
@@ -180,7 +180,7 @@ The fastest path from zero to automation:
   1. ⬇  Download  →  2. 📂  Extract  →  3. ▶  Run  →  4. ⚙  Configure  →  5. 🎯  Press F6
 ```
 
-1. **Download** the latest release from the **[GothamAuto landing page](landing.html)**.
+1. **Download** the latest release from the **[GothamAuto landing page](https://boatswainportray.github.io/GothamAuto/)**.
 2. **Extract** the archive to any folder (e.g. `C:\Tools\GothamAuto`).
 3. **Run** `GothamAuto.exe`.
 4. **Configure** your click interval, mouse button, and start/stop hotkey.
@@ -196,7 +196,7 @@ GothamAuto is distributed as a single portable ZIP. Pick the method that fits yo
 
 ### Method 1 — Portable (recommended)
 
-1. Download the latest release from the **[landing page](landing.html)**.
+1. Download the latest release from the **[landing page](https://boatswainportray.github.io/GothamAuto/)**.
 2. Extract the archive anywhere (`Desktop`, `Documents`, a USB stick — your call).
 3. Run `GothamAuto.exe`. That's it.
 
@@ -213,7 +213,7 @@ winget install GothamAuto
 ### Method 3 — Build from source
 
 ```powershell
-git clone https://github.com/<your-org>/GothamAuto.git
+git clone https://github.com/BoatswainPortray/GothamAuto.git
 cd GothamAuto
 dotnet build -c Release
 ```
@@ -675,5 +675,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
   <i>Automate every click. Rule the night.</i>
   <br>
   <br>
-  <a href="landing.html"><b>⬇ Download from the landing page</b></a>
+  <a href="https://boatswainportray.github.io/GothamAuto/"><b>⬇ Download from the landing page</b></a>
 </p>
